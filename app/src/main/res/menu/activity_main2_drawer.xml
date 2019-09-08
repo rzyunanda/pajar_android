@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_insting"
+            android:icon="@drawable/ic_poll_black_24dp"
+            android:title="@string/insting_informasi_penting" />
+        <item
+            android:id="@+id/nav_detekos"
+            android:icon="@drawable/ic_accessibility_black_24dp"
+            android:title="@string/detekos_deteksi_orientasi_sex" />
+        <item
+            android:id="@+id/nav_ramodif"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/ramodif_rawat_modifikasi" />
+        <item
+            android:id="@+id/nav_kongga"
+            android:icon="@drawable/ic_poll_black_24dp"
+            android:title="@string/kongga_konsultasi_keluarga" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_power_settings_new_black_24dp"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+</menu>
