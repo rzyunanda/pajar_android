@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String title = "";
+        getSupportActionBar().setTitle(title);
         setContentView(R.layout.activity_main);
 
         btn_login = (Button) findViewById(R.id.btn_login);

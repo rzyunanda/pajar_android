@@ -20,14 +20,10 @@
             android:id="@+id/nav_kongga"
             android:icon="@drawable/ic_poll_black_24dp"
             android:title="@string/kongga_konsultasi_keluarga" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_power_settings_new_black_24dp"
+            android:title="@string/logout" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_power_settings_new_black_24dp"
-                android:title="@string/logout" />
-        </menu>
-    </item>
 </menu>

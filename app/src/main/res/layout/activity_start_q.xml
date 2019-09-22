@@ -6,57 +6,95 @@
     android:layout_height="match_parent"
     tools:context=".StartQActivity">
 
-    <RadioGroup
-        android:id="@+id/radio_grup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="267dp">
-
-        <RadioButton
-            android:id="@+id/radio_button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="option 1" />
-
-        <RadioButton
-            android:id="@+id/radio_button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="option 1" />
-
-        <RadioButton
-            android:id="@+id/radio_button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="option 1" />
-
-        <RadioButton
-            android:id="@+id/radio_button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="option 1" />
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/button_1"
-        android:layout_width="188dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="173dp"
-        android:text="Lanjut" />
-
     <TextView
         android:id="@+id/tv_question"
-        android:layout_width="225dp"
-        android:layout_height="115dp"
+        android:layout_width="340dp"
+        android:layout_height="179dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="77dp"
         android:text="Pertanyaan"
         android:textSize="20sp" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:id="@+id/radio_grup1"
+            android:layout_width="293dp"
+            android:layout_height="181dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.58">
+
+            <RadioButton
+                android:id="@+id/radio_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="Pilihan 1"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilihan 2"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilihan 3"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilihan 4"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilihan 5"
+                android:textSize="18sp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="142dp"
+            android:layout_height="59dp"
+            android:background="#0097A7"
+            android:text="Lanjut"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.928"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.918" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="41dp"
+            android:layout_height="40dp"
+            android:text="1"
+            android:textColor="#388E3C"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.892" />
+    </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>

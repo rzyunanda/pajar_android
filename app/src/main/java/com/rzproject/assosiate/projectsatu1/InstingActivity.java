@@ -18,6 +18,9 @@ public class InstingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String title = "Informasi Penting";
+        getSupportActionBar().setTitle(title);
         setContentView(R.layout.activity_insting);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
