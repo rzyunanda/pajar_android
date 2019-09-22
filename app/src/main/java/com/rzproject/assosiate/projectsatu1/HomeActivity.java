@@ -86,7 +86,8 @@ public class HomeActivity extends AppCompatActivity
             startActivity(i);
 
         } else if (id == R.id.nav_detekos) {
-
+            Intent j = new Intent(HomeActivity.this,StartQActivity.class);
+            startActivity(j);
         } else if (id == R.id.nav_kongga) {
 
         } else if (id == R.id.nav_ramodif) {

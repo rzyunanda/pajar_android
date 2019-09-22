@@ -35,11 +35,13 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     @Override
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
         holder.videoWeb.loadData( youtubeVideoList.get(position).getVideoUrl(), "text/html" , "utf-8" );
+
     }
 
     @Override
     public int getItemCount() {
         return youtubeVideoList.size();
+
     }
 
     public class VideoViewHolder extends RecyclerView.ViewHolder {
@@ -51,7 +53,6 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 
             videoWeb.getSettings().setJavaScriptEnabled(true);
             videoWeb.setWebChromeClient(new WebChromeClient() {
-
             } );
         }
     }
