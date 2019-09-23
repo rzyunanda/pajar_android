@@ -4,19 +4,23 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btn_login;
     private Button btn_signup;
+    private TextView text_forgetpassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String title = "";
-        getSupportActionBar().setTitle(title);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
         btn_login = (Button) findViewById(R.id.btn_login);
@@ -24,6 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btn_signup = (Button) findViewById(R.id.btn_signup);
         btn_signup.setOnClickListener(this);
+
+        text_forgetpassword=(TextView) findViewById(R.id.text_forgetpassword);
+        text_forgetpassword.setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_signup:
                 sigUpButtonClicked();
+                break;
+            case R.id.text_forgetpassword:
+                forgotPasswordClicked();
                 break;
         }
     }
@@ -46,6 +56,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void sigUpButtonClicked() {
         Intent i = new Intent(MainActivity.this,SignUpActivity.class);
+        startActivity(i);
+    }
+
+    private void forgotPasswordClicked() {
+        Intent i = new Intent(MainActivity.this,ForgotPassword.class);
         startActivity(i);
     }
 }

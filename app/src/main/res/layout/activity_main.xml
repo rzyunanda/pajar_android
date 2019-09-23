@@ -48,7 +48,7 @@
             android:layout_height="41dp"
             android:background="@drawable/tv_border"
             android:ems="10"
-            android:hint="NIK"
+            android:hint="@string/nik"
             android:inputType="textPersonName"
             android:textAlignment="center"
             android:textStyle="bold"
@@ -57,14 +57,17 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.359" />
+            app:layout_constraintVertical_bias="0.359"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/ed_password"
             android:layout_width="241dp"
             android:layout_height="46dp"
+            android:autofillHints=""
             android:background="@drawable/tv_border"
             android:ems="10"
+            android:hint="Kata Sandi"
             android:inputType="textPassword"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -81,19 +84,21 @@
             android:text="@string/pajar"
             android:textAlignment="center"
             android:textColor="#009688"
-            android:textSize="28sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.251" />
+            app:layout_constraintVertical_bias="0.215" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/text_forgetpassword"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:linksClickable="true"
             android:text="@string/lupa_password"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
