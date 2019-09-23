@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RamodifActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewHasil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hasil :"
+                android:textColor="#080809"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewRTinggi"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:text="Resiko Tinggi"
+                android:textColor="#080809"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:text="1. Menjaga pergaulan"
+                android:textColor="#0A0A0A"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:text="2. Menutup segala celah pornografi misalnya dari gadget. Orang tua harus aktif dalam hal ini"
+                android:textColor="#0A0A0A"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/editText5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:text="3. Diadakan kajian atau seminar mengenai bahaya LGBT di sekolah-sekolah"
+                android:textColor="#0A0A0A"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/editText6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:text="4. Adanya undang-undang yang melarang adanya LGBT sehingga hal ini tidak menyebar semakin parah"
+                android:textColor="#0A0A0A"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/editText7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:text="5. Diadakan penyuluhan keagamaan mengenai LGBT yang menyimpang dari aturan agama"
+                android:textColor="#0A0A0A"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

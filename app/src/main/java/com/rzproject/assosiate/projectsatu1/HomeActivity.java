@@ -91,8 +91,12 @@ public class HomeActivity extends AppCompatActivity
             Intent j = new Intent(HomeActivity.this,StartQActivity.class);
             startActivity(j);
         } else if (id == R.id.nav_kongga) {
+            Intent k = new Intent(HomeActivity.this,KonggaActivity.class);
+            startActivity(k);
 
         } else if (id == R.id.nav_ramodif) {
+            Intent l = new Intent(HomeActivity.this,RamodifActivity.class);
+            startActivity(l);
 
         } else if (id == R.id.nav_logout) {
             Intent m = new Intent(HomeActivity.this,MainActivity.class);
