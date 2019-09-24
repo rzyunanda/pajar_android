@@ -120,6 +120,21 @@
                 android:hint="E-Mail" />
 
             <Button
+                android:id="@+id/buttongetlocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lokasi Saya" />
+
+            <EditText
+                android:id="@+id/editTextLokasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:ems="10"
+                android:hint="Koordinat saya"
+                android:inputType="textPersonName" />
+
+            <Button
                 android:id="@+id/Daftar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
