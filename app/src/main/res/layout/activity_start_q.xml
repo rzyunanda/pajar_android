@@ -26,10 +26,10 @@
             android:layout_height="181dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.262"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.58">
+            app:layout_constraintVertical_bias="0.478">
 
             <RadioButton
                 android:id="@+id/radio_button1"
@@ -91,10 +91,10 @@
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintHorizontal_bias="0.083"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.892" />
+            app:layout_constraintVertical_bias="0.947" />
     </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>

@@ -6,19 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_insting"
-            android:icon="@drawable/ic_poll_black_24dp"
+            android:icon="@mipmap/insting_icon_foreground"
             android:title="@string/insting_informasi_penting" />
         <item
             android:id="@+id/nav_detekos"
-            android:icon="@drawable/ic_accessibility_black_24dp"
+            android:icon="@mipmap/detekos_icon_foreground"
             android:title="@string/detekos_deteksi_orientasi_sex" />
         <item
             android:id="@+id/nav_ramodif"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@mipmap/ramodif_icon_foreground"
             android:title="@string/ramodif_rawat_modifikasi" />
         <item
             android:id="@+id/nav_kongga"
-            android:icon="@drawable/ic_poll_black_24dp"
+            android:icon="@mipmap/kongga_icon_foreground"
             android:title="@string/kongga_konsultasi_keluarga" />
         <item
             android:id="@+id/nav_logout"

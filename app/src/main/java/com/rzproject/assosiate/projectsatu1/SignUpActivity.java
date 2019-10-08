@@ -38,7 +38,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         btnSimpan = (Button) findViewById(R.id.Daftar);
         btnSimpan.setOnClickListener(this);
         editTextLokasi = findViewById(R.id.editTextLokasi);
-        editTextLokasi.setOnClickListener(this);
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         btngetlocation = (Button) findViewById(R.id.buttongetlocation);
         btngetlocation.setOnClickListener(this);
@@ -69,9 +68,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             if (ActivityCompat.checkSelfPermission(SignUpActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(SignUpActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+                //Toast.makeText(SignUpActivity.this, "lokasi gagal", Toast.LENGTH_SHORT).show();
             } else {
                 Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                Toast.makeText(SignUpActivity.this, "lokasi gagal", Toast.LENGTH_SHORT).show();
+
                 if (location != null) {
                     double lat = location.getLatitude();
                     double lng = location.getLongitude();
