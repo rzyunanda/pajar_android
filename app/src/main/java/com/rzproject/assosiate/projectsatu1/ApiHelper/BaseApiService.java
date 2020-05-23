@@ -1,5 +1,7 @@
 package com.rzproject.assosiate.projectsatu1.ApiHelper;
 
+import com.rzproject.assosiate.projectsatu1.Model.InstingData;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
@@ -19,5 +21,7 @@ public interface BaseApiService {
     @POST("login")
     Call<ResponseBody> loginRequest(@Field("username") String username, @Field("password") String password);
 
+    @GET("insting")
+    Call<InstingData> getInsting(@Header("Authorization") String authToken);
 
 }

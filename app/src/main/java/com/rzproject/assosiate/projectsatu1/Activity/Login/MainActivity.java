@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         sharedPrefManager = new SharedPrefManager(this);
 
-        getSupportActionBar().hide();
-        setContentView(R.layout.activity_main);
-
         if (sharedPrefManager.getSpToken().equals("")) {
+
+            setContentView(R.layout.activity_main);
+            getSupportActionBar().hide();
             progressBar = findViewById(R.id.pb_login);
 
             btn_login = findViewById(R.id.btn_login);
@@ -62,11 +62,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             text_forgetpassword.setOnClickListener(this);
 
         } else {
-            super.onCreate(savedInstanceState);
+          //  super.onCreate(savedInstanceState);
+
+
+            setContentView(R.layout.activity_main);
+            getSupportActionBar().hide();
+            progressBar = findViewById(R.id.pb_login);
+
+            btn_login = findViewById(R.id.btn_login);
+            btn_login.setOnClickListener(this);
+
+            edt_username = findViewById(R.id.ed_username);
+            edt_password = findViewById(R.id.ed_password);
+
+            btn_signup = findViewById(R.id.btn_signup);
+            btn_signup.setOnClickListener(this);
+            baseApiService = UtilsApi.getAPIService();
+
+            text_forgetpassword = findViewById(R.id.text_forgetpassword);
+            text_forgetpassword.setOnClickListener(this);
+
 
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
-            finish();
+           finish();
         }
     }
 
