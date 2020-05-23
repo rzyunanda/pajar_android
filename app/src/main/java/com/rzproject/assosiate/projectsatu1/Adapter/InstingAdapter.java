@@ -1,6 +1,7 @@
 package com.rzproject.assosiate.projectsatu1.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.rzproject.assosiate.projectsatu1.Activity.Insting.InstingDetailActivity;
 import com.rzproject.assosiate.projectsatu1.Model.InstingItemModel;
 import com.rzproject.assosiate.projectsatu1.R;
 
@@ -42,6 +44,17 @@ public class InstingAdapter extends RecyclerView.Adapter<InstingAdapter.InstingH
     public void onBindViewHolder(@NonNull InstingAdapter.InstingHolder holder, int position) {
         InstingItemModel model = listInsting.get(position);
         holder.judul.setText(model.judul);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InstingItemModel m = listInsting.get(position);
+
+                Intent DPActivityIntent = new Intent(context, InstingDetailActivity.class);
+                DPActivityIntent.putExtra("insting_extra_key", m);
+                context.startActivity(DPActivityIntent);
+            }
+        });
 
 
     }
