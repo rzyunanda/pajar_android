@@ -10,10 +10,10 @@
     <string name="action_settings">Pengaturan</string>
     <string name="ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
         and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
-    <string name="insting_informasi_penting">Insting (Informasi Penting)</string>
-    <string name="detekos_deteksi_orientasi_sex">Detekos (Deteksi Orientasi Sex)</string>
-    <string name="ramodif_rawat_modifikasi">Ramodif (Rawat Modifikasi)</string>
-    <string name="kongga_konsultasi_keluarga">Kongga (Konsultasi Keluarga)</string>
+    <string name="insting_informasi_penting">Informasi Penting</string>
+    <string name="detekos_deteksi_orientasi_sex">Deteksi Orientasi Sex</string>
+    <string name="ramodif_rawat_modifikasi">Rawat Modifikasi</string>
+    <string name="kongga_konsultasi_keluarga">Konsultasi Keluarga</string>
     <string name="lupa_password">Lupa Password</string>
     <string name="pajar">PAJAR</string>
     <string name="kata_sandi">Kata Sandi</string>
@@ -21,4 +21,9 @@
     <string name="masuk">Masuk</string>
     <string name="nik">NIK</string>
     <string name="profil">Profil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>

@@ -1,24 +1,34 @@
-package com.rzproject.assosiate.projectsatu1;
+package com.rzproject.assosiate.projectsatu1.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuItem;
+import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import java.util.Objects;
+import com.google.android.material.navigation.NavigationView;
 
-public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import com.rzproject.assosiate.projectsatu1.Activity.Detekos.DetekosFragment;
+import com.rzproject.assosiate.projectsatu1.Activity.Insting.InstingFragment;
+import com.rzproject.assosiate.projectsatu1.Activity.Kongga.KonggaFragment;
+import com.rzproject.assosiate.projectsatu1.Activity.Login.MainActivity;
+import com.rzproject.assosiate.projectsatu1.Activity.Ramodif.RamodifFragment;
+import com.rzproject.assosiate.projectsatu1.R;
+
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public String title = "Beranda";
+    InstingFragment instingFragment;
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,18 +36,28 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_main2);
 
         setActionBarTitle(title);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+       setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("Dashboard");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.open,R.string.close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        instingFragment = new InstingFragment();
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.fragmentContainer,instingFragment);
+        fragmentTransaction.commit();// add the fragment
+
     }
+
+
 
     private void setActionBarTitle(String title) {
         if (getSupportActionBar() != null) {
@@ -84,27 +104,29 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_insting) {
-            Intent i = new Intent(HomeActivity.this,InstingActivity.class);
-            startActivity(i);
+            loadFragment(new InstingFragment());
 
         } else if (id == R.id.nav_detekos) {
-            Intent j = new Intent(HomeActivity.this,StartQActivity.class);
-            startActivity(j);
+            loadFragment(new DetekosFragment());
         } else if (id == R.id.nav_kongga) {
-            Intent k = new Intent(HomeActivity.this,KonggaActivity.class);
-            startActivity(k);
+            loadFragment(new KonggaFragment());
 
         } else if (id == R.id.nav_ramodif) {
-            Intent l = new Intent(HomeActivity.this,RamodifActivity.class);
-            startActivity(l);
+            loadFragment(new RamodifFragment());
 
         } else if (id == R.id.nav_logout) {
-            Intent m = new Intent(HomeActivity.this,MainActivity.class);
-            startActivity(m);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void loadFragment(Fragment secondFragment) {
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentContainer,secondFragment);
+        fragmentTransaction.commit();
     }
 }

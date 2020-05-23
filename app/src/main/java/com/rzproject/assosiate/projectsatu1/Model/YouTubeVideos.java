@@ -1,4 +1,4 @@
-package com.rzproject.assosiate.projectsatu1.Java;
+package com.rzproject.assosiate.projectsatu1.Model;
 
 public class YouTubeVideos {
     String videoUrl;

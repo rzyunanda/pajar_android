@@ -1,12 +1,14 @@
-package com.rzproject.assosiate.projectsatu1;
+package com.rzproject.assosiate.projectsatu1.Activity.Insting;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.rzproject.assosiate.projectsatu1.Adapter.VideoAdapter;
-import com.rzproject.assosiate.projectsatu1.Java.YouTubeVideos;
+import com.rzproject.assosiate.projectsatu1.Model.YouTubeVideos;
+import com.rzproject.assosiate.projectsatu1.R;
 
 import java.util.Vector;
 

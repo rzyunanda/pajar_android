@@ -1,4 +1,4 @@
-package com.rzproject.assosiate.projectsatu1;
+package com.rzproject.assosiate.projectsatu1.Activity.Login;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -7,15 +7,18 @@ import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.location.Location;
 import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.Manifest;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import com.rzproject.assosiate.projectsatu1.R;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 

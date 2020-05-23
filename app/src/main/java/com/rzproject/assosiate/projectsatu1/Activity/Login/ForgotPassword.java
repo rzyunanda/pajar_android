@@ -1,10 +1,13 @@
-package com.rzproject.assosiate.projectsatu1;
+package com.rzproject.assosiate.projectsatu1.Activity.Login;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.rzproject.assosiate.projectsatu1.R;
 
 public class ForgotPassword extends AppCompatActivity implements View.OnClickListener {
     public Button resetpassword;
