@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +23,20 @@ import com.rzproject.assosiate.projectsatu1.Activity.Insting.InstingFragment;
 import com.rzproject.assosiate.projectsatu1.Activity.Kongga.KonggaFragment;
 import com.rzproject.assosiate.projectsatu1.Activity.Login.MainActivity;
 import com.rzproject.assosiate.projectsatu1.Activity.Ramodif.RamodifFragment;
+import com.rzproject.assosiate.projectsatu1.ApiHelper.BaseApiService;
+import com.rzproject.assosiate.projectsatu1.ApiHelper.UtilsApi;
 import com.rzproject.assosiate.projectsatu1.R;
+import com.rzproject.assosiate.projectsatu1.SharedPreferences.SharedPrefManager;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public String title = "Beranda";
@@ -29,20 +44,29 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     Toolbar toolbar;
+    private String accessToken;
+
+    private BaseApiService mApiService;
+    private SharedPrefManager sharedPrefManager;
+    private JSONObject dataArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        sharedPrefManager = new SharedPrefManager(this);
+        mApiService = UtilsApi.getAPIService();
+        accessToken = sharedPrefManager.getSpToken();
+
         setActionBarTitle(title);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-       setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Dashboard");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.open,R.string.close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -52,11 +76,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         instingFragment = new InstingFragment();
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fragmentContainer,instingFragment);
+        fragmentTransaction.add(R.id.fragmentContainer, instingFragment);
         fragmentTransaction.commit();// add the fragment
 
     }
-
 
 
     private void setActionBarTitle(String title) {
@@ -115,7 +138,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             loadFragment(new RamodifFragment());
 
         } else if (id == R.id.nav_logout) {
-
+            logout();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -126,7 +149,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private void loadFragment(Fragment secondFragment) {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer,secondFragment);
+        fragmentTransaction.replace(R.id.fragmentContainer, secondFragment);
         fragmentTransaction.commit();
+    }
+
+    private void logout() {
+        mApiService.logout(accessToken).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    sharedPrefManager.saveSPToken("");
+
+                } else {
+                    Toast.makeText(HomeActivity.this, "Gagal", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(HomeActivity.this, "Gagal", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
